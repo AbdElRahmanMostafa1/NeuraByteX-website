@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   authors: [{ name: "NeuraByteX Inc." }],
   creator: "NeuraByteX Inc.",
   publisher: "NeuraByteX Inc.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
     title: "NeuraByteX Inc. - Advanced Technology Solutions",
     description: "Leading technology company specializing in cutting-edge tech products and AI solutions.",

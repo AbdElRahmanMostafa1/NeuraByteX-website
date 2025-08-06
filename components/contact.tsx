@@ -1,40 +1,43 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion, useInView } from "framer-motion";
+import { Mail, MapPin, Send } from "lucide-react";
+import { useRef } from "react";
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@neurabytex.com",
+      details: "neurabytex@gmail.com",
       description: "Send us an email anytime",
     },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri from 8am to 5pm",
-    },
+    // {
+    //   icon: Phone,
+    //   title: "Call Us",
+    //   details: "+1 (555) 123-4567",
+    //   description: "Mon-Fri from 8am to 5pm",
+    // },
     {
       icon: MapPin,
       title: "Visit Us",
       details: "123 Tech Street, Silicon Valley, CA 94000",
       description: "Come say hello at our office",
     },
-  ]
+  ];
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section
+      id="contact"
+      ref={ref}
+      className="py-20 bg-gradient-to-b from-background to-muted/20"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -46,7 +49,8 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your next project? Let's discuss how we can help bring your vision to life.
+            Ready to start your next project? Let's discuss how we can help
+            bring your vision to life.
           </p>
         </motion.div>
 
@@ -57,10 +61,13 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-3xl font-bold mb-8 text-foreground">Let's Start a Conversation</h3>
+            <h3 className="text-3xl font-bold mb-8 text-foreground">
+              Let's Start a Conversation
+            </h3>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              We're here to help you transform your ideas into reality. Whether you need a consultation, have questions
-              about our services, or want to discuss a potential project, we'd love to hear from you.
+              We're here to help you transform your ideas into reality. Whether
+              you need a consultation, have questions about our services, or
+              want to discuss a potential project, we'd love to hear from you.
             </p>
 
             <div className="space-y-6">
@@ -68,7 +75,9 @@ export default function Contact() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                  }
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   className="flex items-start gap-4 p-4 bg-card backdrop-blur-sm rounded-xl border border-border"
                 >
@@ -76,9 +85,15 @@ export default function Contact() {
                     <info.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-primary mb-1">{info.title}</h4>
-                    <p className="text-foreground font-medium mb-1">{info.details}</p>
-                    <p className="text-muted-foreground text-sm">{info.description}</p>
+                    <h4 className="text-lg font-semibold text-primary mb-1">
+                      {info.title}
+                    </h4>
+                    <p className="text-foreground font-medium mb-1">
+                      {info.details}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      {info.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -86,7 +101,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -95,32 +110,33 @@ export default function Contact() {
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-muted-foreground mb-2">First Name</label>
-                  <Input
-                    placeholder="John"
-                    className="bg-white/10 border-border text-foreground placeholder:text-muted-foreground focus:border-border"
-                  />
+                  <label className="block text-sm font-medium text-muted-foreground mb-2">
+                    First Name
+                  </label>
+                  <Input className="bg-white/10 border-border text-foreground placeholder:text-muted-foreground focus:border-border" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-muted-foreground mb-2">Last Name</label>
-                  <Input
-                    placeholder="Doe"
-                    className="bg-white/10 border-border text-foreground placeholder:text-muted-foreground focus:border-border"
-                  />
+                  <label className="block text-sm font-medium text-muted-foreground mb-2">
+                    Last Name
+                  </label>
+                  <Input className="bg-white/10 border-border text-foreground placeholder:text-muted-foreground focus:border-border" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">Email</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Email
+                </label>
                 <Input
                   type="email"
-                  placeholder="john@example.com"
                   className="bg-white/10 border-border text-foreground placeholder:text-muted-foreground focus:border-border"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">Subject</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Subject
+                </label>
                 <Input
                   placeholder="Project Inquiry"
                   className="bg-white/10 border-border text-foreground placeholder:text-muted-foreground focus:border-border"
@@ -128,7 +144,9 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">Message</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Message
+                </label>
                 <Textarea
                   placeholder="Tell us about your project..."
                   rows={5}
@@ -136,7 +154,10 @@ export default function Contact() {
                 />
               </div>
 
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 <Button
                   type="submit"
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 text-lg font-semibold rounded-xl shadow-lg shadow-cyan-500/25"
@@ -146,9 +167,9 @@ export default function Contact() {
                 </Button>
               </motion.div>
             </form>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
-  )
+  );
 }

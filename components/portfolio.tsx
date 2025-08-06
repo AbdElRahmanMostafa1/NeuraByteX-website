@@ -175,7 +175,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                {/* <div className="flex gap-3">
                   <Button
                     variant="outline"
                     size="sm"
@@ -192,7 +192,7 @@ export default function Portfolio() {
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
