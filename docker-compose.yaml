@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:30001"
+      - "3001:30001"
     restart: unless-stopped
     networks:
       - nginx-network
