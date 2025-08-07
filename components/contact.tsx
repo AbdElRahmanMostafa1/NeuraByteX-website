@@ -27,7 +27,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Tech Street, Silicon Valley, CA 94000",
+      details: "408, Silicon Valley, CA 94000",
       description: "Come say hello at our office",
     },
   ];
