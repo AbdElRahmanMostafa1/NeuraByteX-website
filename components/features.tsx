@@ -105,13 +105,13 @@ export default function Features() {
             <p className="text-lg text-gray-300 mb-6">
               Let's discuss how NeuraByteX can help you achieve your technology goals and drive innovation.
             </p>
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-cyan-500/25 transition-all duration-300"
             >
               Start Your Project Today
-            </motion.button>
+            </motion.button> */}
           </div>
         </motion.div>
       </div>
