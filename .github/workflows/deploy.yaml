@@ -1,6 +1,6 @@
 name: Deploy to Droplet
 
-on: 
+on:
   push:
     branches:
       - main
@@ -20,11 +20,11 @@ jobs:
 
       - name: 🚀 Deploy to Droplet
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
-            cd /root/NeuraByteX-website
-            git pull origin main
-            docker compose up --build -d
-            docker system prune -f
-            cd ../infra
+          ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+            cd /root/NeuraByteX-website &&
+            git pull origin main &&
+            docker compose up --build -d &&
+            docker system prune -f &&
+            cd ../infra &&
             docker restart nginx
-          EOF
+          "
